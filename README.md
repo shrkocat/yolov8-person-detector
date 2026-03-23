@@ -1,4 +1,4 @@
-# 🎯 YOLOv8 Person Detector
+# YOLOv8 Person Detector
 
 A real-time person detection app using your webcam and a pretrained YOLOv8 model. It runs a local web server and streams your camera feed — live — with bounding boxes drawn around every detected person.
 
@@ -6,7 +6,7 @@ Built with Python, Flask, OpenCV, and Ultralytics YOLOv8.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 yolov8-person-detector/
@@ -26,7 +26,7 @@ yolov8-person-detector/
 
 ---
 
-## ⚙️ System Requirements
+## System Requirements
 
 | Requirement | Minimum |
 |---|---|
@@ -39,7 +39,7 @@ yolov8-person-detector/
 
 ---
 
-## 🚀 How to Run (Local — Recommended)
+## How to Run (Local — Recommended)
 
 ### Step 1 — Make sure Python is installed
 ```bash
@@ -98,7 +98,7 @@ Your webcam will turn on and you'll see the live feed with green bounding boxes 
 
 ---
 
-## 🐳 How to Run with Docker
+## How to Run with Docker
 
 > **Note:** Docker cannot directly access your webcam on Windows or macOS. Use the local method above for those systems. Docker works best on Linux.
 
@@ -132,7 +132,7 @@ docker run --device=/dev/video1 -e CAMERA_INDEX=1 -p 5000:5000 yolov8-detector
 
 | Model | File | Speed | Accuracy |
 |---|---|---|---|
-| Nano | `yolov8n.pt` | ⚡ Fastest | Lower |
+| Nano | `yolov8n.pt` | Fastest | Lower |
 | Small | `yolov8s.pt` | Fast | Good |
 | Medium | `yolov8m.pt` | Moderate | Better |
 | Large | `yolov8l.pt` | Slow | High |
@@ -140,7 +140,7 @@ docker run --device=/dev/video1 -e CAMERA_INDEX=1 -p 5000:5000 yolov8-detector
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 | Package | Purpose |
 |---|---|
@@ -152,7 +152,7 @@ docker run --device=/dev/video1 -e CAMERA_INDEX=1 -p 5000:5000 yolov8-detector
 
 ---
 
-## ❓ Troubleshooting
+## Troubleshooting
 
 **Camera not opening**
 - Make sure no other app (Zoom, Teams, etc.) is using your webcam
@@ -172,7 +172,7 @@ docker run --device=/dev/video1 -e CAMERA_INDEX=1 -p 5000:5000 yolov8-detector
 
 ---
 
-## 📝 Notes
+## Notes
 
 - On first launch, YOLOv8 automatically downloads the model weights file. An internet connection is required.
 - The Flask development server warning (`Do not use in production`) is normal and safe to ignore for local use.
