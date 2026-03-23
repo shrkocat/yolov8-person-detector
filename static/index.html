@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YOLOv8 Person Detector</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+      color: #00ff64;
+      text-transform: uppercase;
+    }
+
+    header p {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 4px;
+      letter-spacing: 0.08em;
+    }
+
+    .stream-wrapper {
+      position: relative;
+      border: 1px solid #00ff6440;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 0 40px #00ff6415;
+      max-width: 960px;
+      width: 100%;
+    }
+
+    .stream-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .corner {
+      position: absolute;
+      width: 14px; height: 14px;
+      border-color: #00ff64;
+      border-style: solid;
+      opacity: 0.7;
+    }
+    .corner.tl { top: 8px; left: 8px;  border-width: 2px 0 0 2px; }
+    .corner.tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+    .corner.bl { bottom: 8px; left: 8px;  border-width: 0 0 2px 2px; }
+    .corner.br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+
+    .status-bar {
+      margin-top: 14px;
+      font-size: 0.72rem;
+      color: #444;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #00ff64;
+      margin-right: 6px;
+      vertical-align: middle;
+      animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.2; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>YOLOv8 · Person Detector</h1>
+    <p>Live camera feed — detecting humans in real time</p>
+  </header>
+
+  <div class="stream-wrapper">
+    <img src="/video_feed" alt="Live camera stream" />
+    <span class="corner tl"></span>
+    <span class="corner tr"></span>
+    <span class="corner bl"></span>
+    <span class="corner br"></span>
+  </div>
+
+  <div class="status-bar">
+    <span class="dot"></span>
+    STREAM ACTIVE &nbsp;·&nbsp; MODEL: YOLOv8n &nbsp;·&nbsp; TARGET: PERSON
+  </div>
+
+</body>
+</html>
